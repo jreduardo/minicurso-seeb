@@ -1,0 +1,38 @@
+---
+output:
+  revealjs::revealjs_presentation:
+    css: css/style.css
+    reveal_plugins: ["zoom"]
+    transition: slide
+    self_contained: false
+    incremental: false
+    theme: serif
+    highlight: monochrome
+    center: false
+    smart: false
+---
+
+## {class=center}
+
+<h1>Uso do Shiny para o ensino-aprendizagem de Estatística Bayesiana</h1>
+
+<div style="margin-bottom: 100px"></div>
+<h3> Cristian Villegas\
+Eduardo E. Ribeiro Jr\
+Roseli A. Leandro
+</h3>
+
+## {class=center data-background=#383D3D}
+
+<h4 class="gray">Parte I</h4>
+<h1 class="white">Introdução ao Shiny<h2>
+
+## {class=center data-background=#383D3D}
+
+<h4 class="gray">Parte II</h4>
+<h1 class="white">Conceitos de Inferência Bayesiana com Shiny<h2>
+
+## {class=center data-background=#383D3D}
+
+<h4 class="gray">Parte III</h4>
+<h1 class="white">Usando Shiny para diagnóstico de cadeias MCMC<h2>
