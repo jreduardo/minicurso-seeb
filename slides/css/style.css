@@ -1,5 +1,4 @@
 .reveal section p {
-    font-size: 0.9em !important;
     text-align: left;
 }
 
@@ -40,6 +39,11 @@ span.slide-number-a::before {
     margin-right: 5px;
 }
 
+.reveal blockquote {
+    width: 100%;
+    text-align: left;
+}
+
 /*------------------------------------------- */
 /* Two columns */
 #left {
@@ -57,4 +61,21 @@ span.slide-number-a::before {
     text-align: right;
     z-index: -10;
     width: 50%;
+}
+
+/*------------------------------------------- */
+/* Small size */
+.mysmall {
+    font-size: 0.9em !important;
+}
+
+/*------------------------------------------- */
+/* Bottom */
+span.myfoot {
+    margin-left: 40px;
+    font-size: 0.8em;
+    display: table;
+}
+span.myfoot::before {
+    content: "↪️"
 }
