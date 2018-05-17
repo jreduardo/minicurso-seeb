@@ -14,7 +14,7 @@
     text-align: left
 }
 
-li strong, h2 strong, h1 strong, p strong {
+li strong, h1 strong, p strong {
     color: #8b7c69;
 }
 
@@ -42,6 +42,11 @@ span.slide-number-a::before {
 .reveal blockquote {
     width: 100%;
     text-align: left;
+}
+
+.reveal pre {
+    padding: 10px;
+    font-size: 0.7em;
 }
 
 /*------------------------------------------- */

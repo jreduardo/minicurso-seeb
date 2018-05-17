@@ -6,7 +6,7 @@ output:
     transition: slide
     center: false
     smart: false
-    highlight: monochrome
+    highlight: pygments
     incremental: false
     self_contained: false
     reveal_plugins:
@@ -57,11 +57,14 @@ Roseli A. Leandro
 
 ## Disponibilização
 
-- Desenvolvimento e códigos-fonte:\
+- Desenvolvimento e códigos-fonte (dos apps e dos slides):\
   https://github.com/jreduardo/minicurso-bayes
 
 - Webpage com os slides e os materiais:\
   http://www.leg.ufpr.br/~eduardojr/minicurso-bayes
+
+- Pacote R com ferramentas para análise de cadeias MCMC:\
+  http://github.com/jreduardo/mcmctools
 
 ## Motivação
 
@@ -610,3 +613,40 @@ seguinte maneira:
 
 <h4 class="gray">Parte III</h4>
 <h1 class="white">Usando Shiny para diagnóstico de cadeias MCMC<h2>
+
+## O uso de MCMC para inferência bayesiana
+
+## Inferência bayesiana via MCMC (Softwares)
+
+- Pacotes que são interfaces para programas _standalone_:
+    - **rstan** (para o STAN);
+    - **rjags**/**R2jags** (para o JAGS);
+    - **R2OpenBUGS**/**rbugs** (para o OpenBUGS);
+    - **R2WinBUGS** (para o WinBUGS).
+
+- Pacotes R
+    - **mcmc**;
+    - **MCMCpack**;
+    - **LaplacesDemon**.
+
+## Pacote **mcmctools**
+
+**Ferramentas utéis para manipulação de objetos MCMC**
+
+```{r eval=FALSE}
+
+# install.packages("devtools")
+install_github("jreduardo/mcmctools")
+help(package = "mcmctools", help_type = "html")
+
+```
+
+Funções:
+
+- `mcmctools::mct_select`
+- `mcmctools::mct_burnin`
+- `mcmctools::mct_thin`
+- `mcmctools::mct_merge`
+- **`mcmctools::mct_shinyapp`**
+
+## Exemplo de uso
