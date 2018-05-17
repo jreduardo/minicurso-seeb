@@ -5,24 +5,19 @@ shinyUI(
   #fluidPage(
  # titlePanel("Conjugancy"),
   navbarPage(title="Conjugate families of distributions",
-  #tabPanel("Help"), #includeMarkdown("help.md")),
+  tabPanel("Help", includeMarkdown("help.md")),
    
   navbarMenu("Binomial",  
   tabPanel("Learning about Theta",
   sidebarLayout(
     sidebarPanel(
       withMathJax(), 
-      #h3(strong("Prior Beta distribution + Binomial Likelihood function  
-      #          = Posterior Beta distribution",
-      #          style="color:black")),
-      #br(),
-      #br(),
       h3(strong('Prior Beta distribution'),
          style="color:red"),
       numericInput(inputId="alpha",label=HTML("&alpha;"),
-                   value=20,min=0.1, max=20, step=0.1),
+                   value=2,min=0.1, max=20, step=0.1),
       numericInput(inputId="beta",label=HTML("&beta;"),
-                   value=3,min=0.1, max=20, step=0.1),
+                   value=5,min=0.1, max=20, step=0.1),
       br(),
       br(),
       h3(strong('Binomial Likelihood function',style="color:red")),
@@ -63,6 +58,7 @@ shinyUI(
       
     ),
     mainPanel(
+      h1(strong("Prior, Likelihood, Posterior and Posterior Predictive Distribution"), align="center"),
       plotOutput("distPlot1")
      )
   )
@@ -76,17 +72,10 @@ shinyUI(
            sidebarLayout(
              sidebarPanel(
                withMathJax(), 
-               #h3(strong("Prior Gamma distribution + Poisson Likelihood function  
-              #  = Posterior Gamma distribution",
-              #           style="color:black")),
-              # br(),
-              # br(),
-               #h3(strong('Maximum of x axis',
-              #           style="color:red")),
                h3(strong('Prior Gamma distribution',
                          style="color:red")),
                numericInput(inputId="alpha1",label=HTML("&alpha;"),
-                            value=10,min=0.1, max=20, step=0.1),
+                            value=2,min=0.1, max=20, step=0.1),
                numericInput(inputId="beta1",label=HTML("&beta;"),
                             value=3,min=0.1, max=20, step=0.1),
                br(),
@@ -94,10 +83,10 @@ shinyUI(
                h3(strong('Poisson Likelihood function',
                          style="color:red")),
                numericInput(inputId="lambda",label=HTML("&theta;"),
-                            value=0.2,min=0.1, max=10, step=0.1),
+                            value=2,min=0.1, max=10, step=0.1),
                numericInput(inputId="n1",
                             label="sample size",
-                            value=1,min=1, max=1000, step=1),
+                            value=10,min=10, max=1000, step=1),
                br(),
                br(),
                h3(strong('Posterior Gamma distribution',
@@ -108,7 +97,7 @@ shinyUI(
                             value=0.50,min=0.01, max=1, step=0.01),
               numericInput(inputId="maximo_Poisson",
                            label="Maximum  valur for x axis",
-                           value=10,min=0, max=20, step=1),
+                           value=5,min=5, max=20, step=1),
                 br(),
                 br(),
                h3(strong('Posterior Preditive distribution'),
@@ -130,7 +119,9 @@ shinyUI(
                
                
              ),
-             mainPanel(plotOutput('distPlot2'))
+             mainPanel(
+               h1(strong("Prior, Likelihood, Posterior and Posterior Predictive Distribution"), align="center"),
+               plotOutput('distPlot2'))
            )
   )
   )

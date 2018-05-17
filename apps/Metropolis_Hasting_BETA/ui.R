@@ -1,7 +1,7 @@
 library("shiny")
  
 shinyUI(pageWithSidebar(
-    headerPanel("Metropolis Hasting algorithm"),
+    headerPanel(""),
 
     sidebarPanel(
       withMathJax(),
@@ -29,19 +29,19 @@ shinyUI(pageWithSidebar(
       h3(strong("Initial values",style="color:red")),
       numericInput(inputId="theta.inicial.1", 
                    label=HTML("&theta;[1]"), 
-                   value=0.1, min = -5, max = 5,
+                   value=0.1, min = 0, max = 5,
                    step=0.5),
       numericInput(inputId="theta.inicial.2",
                    label=HTML("&theta;[2]"), 
-                   value=0.5, min = -5, max = 5,
+                   value=0.5, min = 0, max = 5,
                    step=0.5),
       numericInput(inputId="theta.inicial.3",
                    label=HTML("&theta;[3]"), 
-                   value=0.1, min = -5, max = 5,
+                   value=0.9, min = 0, max = 5,
                    step=0.5),
       numericInput(inputId="tuning.parameter",
                    label=HTML("&beta;"),
-                   value=0.2, min = 0.5, max = 5,
+                   value=2, min = 0.5, max = 5,
                    step=0.5),
       br(),
       br(),
@@ -69,9 +69,8 @@ shinyUI(pageWithSidebar(
         ),
 
     mainPanel(
-       #hr(strong("Traceplot")),
+       h1(strong("Metropolis Hasting algorithm (dependence sampling)"), align="center"),
        plotOutput("plot1"),
-       #hr(strong("ACF and Metropolis Sampling")),
        plotOutput("plot2"),
        h3(strong("Summary of each chain",style="color:red")),
        verbatimTextOutput("summary1")

@@ -1,7 +1,7 @@
 library("shiny")
  
 shinyUI(pageWithSidebar(
-    headerPanel("Metropolis algorithm"),
+    headerPanel(""),
 
     sidebarPanel(
       withMathJax(),
@@ -9,9 +9,6 @@ shinyUI(pageWithSidebar(
                 with shape and rate parameter
                 based on the proposal normal distribution
                 with tuning parameter (sigma)",style="color:black")),
-      #helpText('An irrational number \\(\\sqrt{2}\\)
-      #     and a fraction $$1-\\frac{1}{2}$$'),
-      #hr(),
       br(),
       br(),
       h3(strong("Behaviour of the MCMC",style="color:red")),
@@ -69,14 +66,9 @@ shinyUI(pageWithSidebar(
         ),
 
     mainPanel(
-      #verbatimTextOutput("message"),
-      #hr(strong("Traceplot")),
+      h1(strong("Metropolis algorithm (dependence sampling)"), align="center"),
       plotOutput("plot1"),
-      #hr(strong("ACF Sampling from Metropolis Hasting 
-      #          Sampling from Metropolis Hasting")),
       plotOutput("plot2"),
-      #hr(strong("Sampling from Metropolis Hasting")),
-      #plotOutput("plot3"),
       h3(strong("Summary of each chain",style="color:red")),
       verbatimTextOutput("summary1")
           

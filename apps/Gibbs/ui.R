@@ -1,8 +1,7 @@
 library("shiny")
  
 shinyUI(pageWithSidebar(
-    headerPanel("Gibbs Sampling for Beta Binomial
-                distribution"),
+    headerPanel(""),#Gibbs Sampling for Beta Binomial distribution
 
     sidebarPanel(
       withMathJax(),
@@ -47,11 +46,11 @@ shinyUI(pageWithSidebar(
                    value=16, min = 1, max = 100,
                    step=1),
       numericInput(inputId="alpha", 
-                   label="alpha", 
+                   label=HTML("&alpha;"), 
                    value=2, min = 0.5, max = 10,
                    step=0.5),
       numericInput(inputId="beta", 
-                   label="beta", 
+                   label=HTML("&beta;"), 
                    value=4, min = 0.5, max = 10,
                    step=0.5),
       br(),
@@ -69,10 +68,9 @@ shinyUI(pageWithSidebar(
         ),
 
     mainPanel(
-       #hr(strong("Traceplot")),
+      h1(strong("Gibbs Sampling for Beta Binomial distribution"), align="center"),
       plotOutput("plot1"),
-       #hr(strong("ACF and Metropolis Sampling")),
-       plotOutput("plot2"),
-       h3(strong("Summary of each chain",style="color:red")),
-       verbatimTextOutput("summary1")
+      plotOutput("plot2"),
+      h3(strong("Summary of each chain",style="color:red")),
+      verbatimTextOutput("summary1")
        )))

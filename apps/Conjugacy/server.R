@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
       sy <- sum(dados)
       L.theta<- theta^sum(dados)*(1-theta)^(m*n-sum(dados))
       L.theta<- L.theta/max(L.theta)
-      # L.theta <- dbeta(theta, sy + 1, m * n - sy + 1)
+      #L.theta <- dbeta(theta, sy + 1, m * n - sy + 1)
       return(L.theta)
     }
     

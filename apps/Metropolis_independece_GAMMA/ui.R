@@ -1,7 +1,7 @@
 library("shiny")
  
 shinyUI(pageWithSidebar(
-    headerPanel("Metropolis Hasting algorithm"),
+    headerPanel(""),#
 
     sidebarPanel(
       withMathJax(),
@@ -74,7 +74,7 @@ shinyUI(pageWithSidebar(
         ),
 
     mainPanel(
-       #hr(strong("Traceplot")),
+       h1(strong("Metropolis Hasting algorithm (independence sampling)"), align="center"),
        plotOutput("plot1"),
        #hr(strong("ACF and Metropolis Sampling")),
        plotOutput("plot2"),
