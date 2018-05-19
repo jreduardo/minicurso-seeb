@@ -1,7 +1,6 @@
 library("shiny")
  
-shinyUI(pageWithSidebar(
-    headerPanel(""),
+fluidPage(title="MH (dependence)",
 
     sidebarPanel(
       withMathJax(),
@@ -65,4 +64,4 @@ shinyUI(pageWithSidebar(
        plotOutput("plot2"),
        h3(strong("Summary of Chains",style="color:black")),
        verbatimTextOutput("summary1")
-       )))
+       ))
