@@ -1,7 +1,6 @@
 library("shiny")
  
-shinyUI(pageWithSidebar(
-    headerPanel(""),#
+fluidPage(title="MH (independence)",
 
     sidebarPanel(
       withMathJax(),
@@ -67,4 +66,4 @@ shinyUI(pageWithSidebar(
        verbatimTextOutput("summary1")
        )
     
-    ))
+    )
