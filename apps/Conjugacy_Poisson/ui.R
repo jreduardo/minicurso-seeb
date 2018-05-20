@@ -1,9 +1,9 @@
 library(shiny)
 
 
-#shinyUI(
-  navbarPage(title=h3(strong("Poisson distribution")),
-
+fluidPage(title="Poisson distribution",
+          navbarPage(h3(strong("Poisson distribution")),
+                     
   navbarMenu(h3(strong("Conjugacy")),  
  
   tabPanel(h3(strong("Learning about Theta")),
@@ -110,4 +110,4 @@ library(shiny)
   
   )
   
-
+)
