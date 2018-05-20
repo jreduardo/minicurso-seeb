@@ -47,7 +47,7 @@ shinyServer(function(input, output) {
                       theta2=theta[,2],
                       theta3=theta[,3])
     traceplot<- ggplot() + 
-      geom_line(aes(x=iter,y=theta1), def1, color="green", size=2)+
+      geom_line(aes(x=iter,y=theta1), def1, color="black", size=2)+
       geom_line(aes(x=iter,y=theta2), def1, color="red", size=2)+
       geom_line(aes(x=iter,y=theta3), def1,color="blue", size=2)+
       xlab("Iterations")+
@@ -75,7 +75,7 @@ shinyServer(function(input, output) {
        
        v1<- ggplot(aux1, aes(x=lag,y=acf))+
          geom_bar(stat="identity", position = "identity", width = 0.1,
-                  color="green")+
+                  color="black")+
          theme(
            plot.title = element_text(color="black", size=24, face="bold"),
            axis.title.x = element_text(color="black", size=24, face="bold"),
@@ -112,7 +112,7 @@ shinyServer(function(input, output) {
        
        
   v4<- ggplot(dados1, aes(theta1))+ 
-    geom_histogram(aes(y=..density..),fill="green")+
+    geom_histogram(aes(y=..density..),fill="black")+
     stat_function(fun = dgamma, 
                   args = list(shape = input$shape, rate=input$rate), 
                   lwd = 2, 
