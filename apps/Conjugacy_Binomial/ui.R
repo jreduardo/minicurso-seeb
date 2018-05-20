@@ -1,8 +1,7 @@
 library(shiny)
 
-
-#shinyUI(
-  navbarPage(title=h3(strong("Binomial distribution")),
+fluidPage(title="Binomial distribution",
+    navbarPage(h3(strong("Binomial distribution")),
 
   navbarMenu(h3(strong("Conjugacy")),  
  
@@ -109,7 +108,7 @@ library(shiny)
   
    
     
-  #)
+  )
 #)
 
 
