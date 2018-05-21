@@ -108,7 +108,7 @@ shinyServer(function(input, output) {
        )
 
      v4<- ggplot(dados, aes(x1))+
-       geom_bar(fill="black")+
+       geom_bar(fill="black", width=0.5)+
        xlim(x.valores)+ylim(0,y.valores)+
        xlab("x")+
        ylab("f(x)")+
@@ -121,7 +121,7 @@ shinyServer(function(input, output) {
        )
      
      v5<- ggplot(dados, aes(x2))+
-       geom_bar(fill="red")+
+       geom_bar(fill="red", width=0.5)+
        xlim(x.valores)+ylim(0,y.valores)+
        xlab("x")+
        ylab("f(x)")+
@@ -134,7 +134,7 @@ shinyServer(function(input, output) {
        )
        
      v6<- ggplot(dados, aes(x3))+
-        geom_bar(fill="blue")+
+        geom_bar(fill="blue", width=0.5)+
         xlim(x.valores)+ylim(0,y.valores)+
         xlab("x")+
         ylab("f(x)")+
