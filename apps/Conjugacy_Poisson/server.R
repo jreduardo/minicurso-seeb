@@ -171,7 +171,7 @@ shinyServer(function(input, output) {
       
      v2<- ggplot(data=dados_preditiva_Poisson(), aes(x, y)) +
       geom_bar(stat="identity",width=0.5, fill = "black")+
-      xlab(expression(theta))+
+       xlab("Future oservations")+
       ylab(expression(pi(y[t]/data)))+
       #ylim(0,1)+
       labs(title ="")+#Posterior Predictive Distribution
