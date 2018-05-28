@@ -40,28 +40,31 @@ Eduardo E. Ribeiro Jr\
 Roseli A. Leandro
 </h3>
 
-## Autores
+## Autores {class=mysmall}
 
 - **Cristian Villegas:** Doutor em Estatística pela USP (2010). Atualmente é
   professor doutor na ESALQ-USP e tem experiência na área de modelos
-  simétricos e semi-paramétricos.
+  simétricos e semi-paramétricos.\
+  clobos@usp.br
 
 - **Eduardo E. Ribeiro Jr:** Bacharel em Estatística pela
   UFPR (2016). Atualmente é mestrando no PPG em Estatística e Experimentação na
   ESALQ-USP e tem experiência na área de modelos lineares generalizados
-  e extensões.
+  e extensões.\
+  jreduardo@usp.br
 
 - **Roseli A. Leandro:** Doutora em Estatística e Experimentação pela
   ESALQ-USP (1997). Atualmente é professora doutora na ESALQ-USP e tem
-  experiência na área de inferência bayesiana.
+  experiência na área de inferência bayesiana.\
+  raleandr@usp.br
 
 ## Disponibilização
 
 - Desenvolvimento e códigos-fonte (dos apps e dos slides):\
-  https://github.com/jreduardo/minicurso-bayes
+  https://github.com/jreduardo/minicurso-seeb
 
 - Webpage com os slides e os materiais:\
-  http://www.leg.ufpr.br/~eduardojr/minicurso-bayes
+  http://www.leg.ufpr.br/~eduardojr/courses/seeb
 
 - Pacote R com ferramentas para análise de cadeias MCMC:\
   http://github.com/jreduardo/mcmctools
@@ -308,7 +311,7 @@ dados.
    \dfrac{\mathcal{L}(\boldsymbol{\theta} \mid \boldsymbol{y})
       \pi(\boldsymbol{\theta})}{
       \int \mathcal{L}(\boldsymbol{\theta} \mid \boldsymbol{y})
-      \pi(\boldsymbol{\theta})}
+      \pi(\boldsymbol{\theta})d\boldsymbol{\theta}}
    \propto
    \mathcal{L}(\boldsymbol{\theta} \mid \boldsymbol{y})
    \pi(\boldsymbol{\theta}),
@@ -321,37 +324,6 @@ em que,
   **verossimilhança**; e
 - $\pi(\boldsymbol{\theta} \mid \boldsymbol{y})$ é chamada de
   distribuição **_a posteriori_**.
-
-## Inferência bayesiana
-
-- Na aproximação bayesiana a incerteza relativa a quantidade
-  desconhecida $\boldsymbol{\theta}$ é modelada e assim, como parte
-  integrante do modelo uma distribuição _a priori_
-  $\pi(\boldsymbol{\theta})$ é introduzida;
-
-- Esta distribuição expressa o estado de conhecimento sobre o parâmetro
-  $\boldsymbol{\theta}$ antes que os dados $\boldsymbol{y}$ sejam
-  observados.
-
-- Dado o conhecimento _a priori_ $\pi(\boldsymbol{\theta})$ e os dados
-  $\boldsymbol{y}$, é possível calcular a distribuição de probabilidade
-  de $\boldsymbol{\theta}$ após a observação de $\boldsymbol{y}$, a
-  distribuição _a posteriori_ de $\boldsymbol{\theta}$, denotada por
-  $\pi(\boldsymbol{\theta} \mid \boldsymbol{y})$.
-
-## Função de verossimilhança
-
-- A função de verossimilhança, $\mathcal{L}(\boldsymbol{\theta} \mid
-  \boldsymbol{y})$, desempenha um papel muito importante na fórmula de
-  Bayes.
-
-- É por meio de $\mathcal{L}(\boldsymbol{\theta} \mid \boldsymbol{y})$
-  que o conhecimento _a priori_ sobre $\boldsymbol{\theta}$ é
-  atualizado;
-
-- $\mathcal{L}(\boldsymbol{\theta} \mid \boldsymbol{y})$ pode ser vista
-  como a representação do que os dados têm a nos contar a respeito do
-  parâmetro $\boldsymbol{\theta}$.
 
 ## Distribuição _a priori_ {class=mysmall}
 
@@ -435,7 +407,8 @@ aleatória de uma distribuição binomial com parâmetro $\theta$,
 \[
   \begin{aligned}
   f(\tilde{y} \mid \boldsymbol{y}) &= \int_{\mathcal{R}}
-    f(\tilde{y} \mid \theta) \pi(\theta \mid \boldsymbol{y}) =\\
+    f(\tilde{y} \mid \theta) \pi(\theta \mid \boldsymbol{y})
+    d\boldsymbol{\theta} =\\
   &= \int_0^1 {\tilde{m} \choose \tilde{y}} \theta^{\tilde{y}}
     (1-\theta)^{ \tilde{m}-\tilde{y} }  \theta^{\sum_i^{n} y_i +
     \alpha -1}(1 - \theta)^{nm-\sum_i^n y_i + \beta -1} d \theta,\\
@@ -446,7 +419,7 @@ aleatória de uma distribuição binomial com parâmetro $\theta$,
 e portanto,
 \[
   \tilde{y} \mid \boldsymbol{y} \sim \text{Beta-Binomial}(
-  \tilde{m},\; \sum_{i=1}^n y_i + \alpha,\; nm-\sum_i^n y_i + \beta).
+  \tilde{m},\; \sum_{i=1}^n y_i + \alpha,\; n\tilde{m}-\sum_i^n y_i + \beta).
 \]
 
 ## Exemplo com a distribuição Poisson {class=mysmall}
@@ -512,7 +485,8 @@ conclusão.
 \[
   \begin{aligned}
   f(\tilde{y} \mid \boldsymbol{y}) &= \int_{\mathcal{R}}
-    f(\tilde{y} \mid \theta) \pi(\theta \mid \boldsymbol{y}) =\\
+    f(\tilde{y} \mid \theta) \pi(\theta \mid \boldsymbol{y})
+    d\boldsymbol{\theta} =\\
   &= \int_{0}^{\infty} \dfrac{e^{-\theta}\theta^{\tilde{y}}}{\tilde{y}!}
     \dfrac{\tilde{\beta}^{\tilde{\alpha}}}{\Gamma(\tilde{\alpha})}
     \theta^{\tilde{\alpha}-1}  e^{-\tilde{\beta} \theta} d\theta\\
@@ -614,8 +588,6 @@ seguinte maneira:
 <h4 class="gray">Parte III</h4>
 <h1 class="white">Usando Shiny para diagnóstico de cadeias MCMC<h2>
 
-## O uso de MCMC para inferência bayesiana
-
 ## Inferência bayesiana via MCMC (Softwares)
 
 - Pacotes que são interfaces para programas _standalone_:
@@ -650,3 +622,61 @@ Funções:
 - **`mcmctools::mct_shinyapp`**
 
 ## Exemplo de uso
+
+```{r, eval=FALSE}
+
+#-------------------------------------------
+# (toy) Data set
+str(mtcars)
+help(mtcars, help_type = "html")
+splom(~mtcars, data = mtcars)
+
+#-------------------------------------------
+# Define linear model in JAGS
+str_model <- "
+ model {
+   for (i in 1:n) {
+     mu[i] <- X[i, ] %*% beta[]
+     y[i] ~ dnorm(mu[i], tau)
+   }
+   for (j in 1:p) {
+     beta[j] ~ dnorm(0, 0.001)
+   }
+   tau ~ dgamma(0.001, 0.001)
+ }
+"
+
+#-------------------------------------------
+# Initialize the JAGS model
+X <- model.matrix(
+    ~factor(cyl) + factor(am) + hp + drat + qsec,
+    data = mtcars)
+jags <- jags.model(
+    file = textConnection(str_model),
+    data = list(
+        n = nrow(X),
+        p = ncol(X),
+        X = X,
+        y = mtcars$mpg),
+    n.chains = 3)
+
+#-------------------------------------------
+# Posterior sampling
+samples <- coda.samples(
+    model = jags,
+    variable.names = c("beta", "tau", "mu"),
+    n.iter = 5000)
+str(samples)
+
+#-------------------------------------------
+mct_shinyapp(samples)
+
+```
+
+## {class=center data-background=#383D3D}
+
+<h1 class="white">Obrigado<h2>
+<h4 class="gray">
+http&#58;//www.leg.ufpr.br/~eduardojr/courses/seeb\
+{clobos | jreduardo | rleandr} @ usp.br
+</h4>
